@@ -1,0 +1,253 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="IterateTaxIDs" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Extracted_DataTable" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="Main_DataRow" Type="InArgument(sd:DataRow)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>902,2032</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>IterateTaxIDs_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="IterateTaxIDs" sap:VirtualizedContainerService.HintSize="611,1967" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataRow" Name="tempDT" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: ACME System 1 - Vendors - Search" sap:VirtualizedContainerService.HintSize="569,1875" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="IfNotOpen" ScopeGuid="9b008422-4266-4476-b604-4b5dadedd5ad" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="535,1619" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="493,1525" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="compareRow" />
+                <Variable x:TypeArguments="x:String" Name="mainDataRow" />
+                <Variable x:TypeArguments="x:String" Name="searchDataRow" />
+                <Variable x:TypeArguments="s:String[]" Default="[{&quot;Moscow&quot;, &quot;Bucuresti&quot;, &quot;Berlin&quot;, &quot;Lyon&quot;}]" Name="targetCities" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vendor TaxID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="9b008422-4266-4476-b604-4b5dadedd5ad" Text="[Main_DataRow.Item(&quot;Tax ID&quot;).ToString()]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search" DesignTimeRectangle="468, 382, 485, 34" ElementType="InputBox" FriendlyName="'INPUT vendorTaxID'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='' /&gt;" Guid="b48dc294-7097-4ea9-b783-83b4e64ab4f8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANgSURBVHhe7d1LTttgGEbhf5NsoQMWw1YqMWPSCSMW0BYhUYoioLmQK27k2OFrjpO/GXRQSiH24DzSK0Vgxkc2tpOK1ToW5XNMlusYFXX0n+p4WNRxN6ujN63idlLF991udvs2XjnnnHPuH5YbmptKX+ksvaW79JcO02O6TJ8TH6abHww3v3iYb/5gtv3j68dVXI3KuByyVXwdlPGl2arZ537pnHPOuRcst5OO0lO6Sl/pLL2lu/SXDtNjukyfE8UebOp9P6/joreMk/NJHJ8O4sPHvnPOOecOMLpLf+kwPabL9Dlxas1pNr/goLPLafwYTWI8HjvnnHPuAKO79JcO02O6TJ8T18A5xabgHFAURdR1Hev12jnnnHMHWFVVTX/pMD2my/Q5UWuuhVPv8bxoDpYkSYdFfyeLn02P6TJ9TtxVxj+tuSZOySVJUjvoMD2my/Q5cfs3d5fxQ8+iJUlqDx2mx3SZPiee0+I2cCMtSVK7cqTpMn1OXPfmeS0jLUlSu/aR3j473USaB6uNtCRJ7cqRpstNpG/G2zegvCbSR0dHu0+SJOl/5UjTZfqceI8oryoz0pIktWsf6e27vhMv/ea9okZakqR25UjTZfpspCVJ6ggjLUlSRxlpSZI6ykhLktRRRlqSpI4y0pIkdZSRliSpo4y0JEkdZaQlSeooIy1JUkcZaUmSOuqPSPsFG5IkdUOO9O8v2PCrKiVJ6oZ9pHdfVcmXSvPl0q+JtCRJejs50nSZPjeRvhy+7nK3JEl6OznSdLmJ9G0Tac+kJUlq2z7SZdDn1JtWcTUy0pIktS1Hmi7T53Q3q+P60cvdkiS1LUeaLtPn9LCom+vex6eDKMp6d5gkSTo0OkyP6TJ9Tv2nOnqzKk7OJ/HputgdJkmSDo0O02O6TJ/TqKibWl/0lk29OWBZPe8OlyRJ743u0l86TI/pMn1Ok+U6Bpta38+3oabgHMQ1ceecc869/+gu/aXD9Jgu0+e0KJ9juvkw5Ix6XjWn2FwL55/W3F3GbeA8r8WD1bwBhVeVMd4r6pxzzrm/L7eTjtJTukpf6Sy9pbv0lw7TY7pMn1Ox2n6g2Jxacw2c02zuKuP2b57T4o8Z7xFlvPTbOeeccy9fbmhuKn2ls/SW7tJfOkyP6XKxWscvBAvDWIf6OzMAAAAASUVORK5CYII=" InformativeScreenshot="0c3ebdd9b0f27b237ee39543141297d9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="468, 357, 93, 20" ElementType="Text" FriendlyName="'Vendor TaxID'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' aaname='Vendor TaxID:' check:text='Vendor TaxID:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAYCAYAAADqK5OqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK9SURBVGhD7VULbtswDPWdfK76KkZOEucibXKLFsmGdWvX5mNzoiVSFGU5HmpjxqAHPDvWh5Teo5QCMv45sgkrQDZhBcgmrADZhBUgm7ACZBNWAGfCCZqHEsqyhPrJtngcoDbtZVlB8+Ka5sRT3eetdifXMA9Ou6qPm2K8z+mg2BTjsBnOUW4OdsAd8EngReuJTqSpAf8a/7MJyIfGlPg4/HX00kDVT6xN7XtQAkoYbi48HTx2R7GQYTx/slzfkAm8FsegAGh+DTVt/k6B0JpljsgkIRb3UZvSJmVCaKzfJ+elOMqY4D+BgkWTVPKQXuRkRbBI/trTjHMq8sKliZb3qjoygU63ojdJXs/xVT3NBAN9i0wxgSe5QSx6H4QWIypbVTGbQElVPL/52DgdY1gQ/PYm3BOfEJmgocVC6GIQfZNNSIiuEZrAG8RrhjZPV05cgUy3wHgxbo4yNRAjMJJyCKMRU8aMIGnCiNAILiqVa2ETfMBqU6sAIya4MV83YeC0IeY2QVe+/u7hTyBSCjzZhMG4MSITeKKjFywhkMA9E3xsiuE3Snm4CKK8FPfrJuh1Ur8Ui9uIopqnmaDXnUZsgpisNxotzDG9GGVCEDski66vCCLHmM+EiGwC5bBXsS6MlAmDFOalrqcBEwCOjRN7s4eu6wJyn2PVHLlvTyY80vi9M2ELRzeG23pWsG3s6ZBxuuetuqvlOmh+DXtuGyet2edQa3g+wrYvDhuT9sHjeT041sejfdL4iFo/ihPo0VkTgoGS2Je5OItBwc2DKdszF2HBH+aB79Y8kDfzQNJ35nI0J8GKT4L34pv31byv5se1xd+WF/OdOT8LFh+FFx1nw8+rfyM/MhdhYTTmKpdCv1/anm/nFn4Zvp07Jn5nzsdCiv9+sQL//Gzh1fDHh+X33zdDfLfwzfzOnJM3+APKJrmcEEBm0AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="451,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b008422-4266-4476-b604-4b5dadedd5ad" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search" DesignTimeRectangle="468, 535, 70, 34" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' type='button' aaname='Search' check:text='Search' /&gt;" Guid="172beebe-0530-4c0b-9038-d29ea16b0357" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAmCAYAAABj5g1QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH1SURBVGhD7ZqxbsIwEIb7RJVKH6lzpQ5d2pdA6jNUXctCu/QJEGvFBEPZEF3IgMRyzW/Hztmxk6sUISD3S/9Azuf4Pp8DErkilUgKSqgA1PfPL929fNHo4Y2u718HadQOBmDB5UEhgEE3j+80evqg2+fPQRq1GwYlCw7LgwJFDEglD9FgASZOHhQIDrmTYoMFmDh5UDifqYQhG0ycFFSLFZTQCkpoBSW0ghJaQQmtoITuHdRkU03itN/SODHuGB4vD73dv1dQBtJm3bxGBU3YtWP5REGtaVXmrubd100BXgeaTdn46ZZ2VcSKxzFXQTOXX0HIzWdBFbTaV6FSu+Wivtc/3COoBc2woI4dbOzyvCiTqo6rINVQ4zkt9KBreX702QH085lYtDFC9wgKrgphCjsM8eZCcTxzOx2CjbvTgpTlwnG+3D2DYg6OUNgxKYXFRsCzoNoLPw9Q3mzXDai21q8BOXDtHXWOoOJnBXP9bdixUMwRFHaRRy/zMI+6yCw+AMoWn3wwl8qCcmNYDrvfiYKybvzgTHRZPIYvPIihSAPCgU4XauHXcvGTBnWpVlBCKyihFZTQCkpoBSW0ghJaQQmdBKV/qYfO/qWuL2mEzr6koa/9WKN2w6BkkXztB0IAFDEI53OIRu1gwCFBAShVXgpKJKI/Y87vzHYuTzEAAAAASUVORK5CYII=" InformativeScreenshot="859ee3e8865c5302bfce9509390132b8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search' /&gt;" SearchSteps="FuzzySelector, Image" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[compareRow]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Vendor' ReferenceIdx='0' Name='Vendor'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Tax ID' ReferenceIdx='1' Name='Tax ID'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Address' ReferenceIdx='2' Name='Address'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='City' ReferenceIdx='3' Name='City'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Country' ReferenceIdx='4' Name='Country'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Vendor' attr='text' /&gt;&lt;column name='Tax ID' attr='text' /&gt;&lt;column name='Address' attr='text' /&gt;&lt;column name='City' attr='text' /&gt;&lt;column name='Country' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="451,156" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Page" MaximumResults="1" ScopeIdentifier="9b008422-4266-4476-b604-4b5dadedd5ad" Version="V1">
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="469, 449, 998, 74" FriendlyName="'Vendor Tax'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="678328e5-7bef-4972-a2f8-1d22d60f60de" InformativeScreenshot="e7415f8a0f8dc60f783b2f726c693ed9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Search Results' /&gt;" SearchSteps="Selector" />
+                </uix:NExtractData.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NExtractData>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="451,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[mainDataRow]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[String.Join(", ",Main_DataRow.itemArray)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[searchDataRow]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[String.Join(", ",compareRow(0).itemArray)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MultipleAssign>
+              <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="451,521" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+                <ui:IfElseIf.ConditionBlocks>
+                  <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                    <ui:IfElseIfBlock BlockType="If" Condition="[not mainDataRow.Equals(searchDataRow)]">
+                      <ui:IfElseIfBlock.Then>
+                        <Throw Exception="[New BusinessRuleException(&quot;Search values does not match with Main Data:&quot; + vbnewline + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;searchDataRow + vbnewline +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;mainDataRow)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      </ui:IfElseIfBlock.Then>
+                    </ui:IfElseIfBlock>
+                    <ui:IfElseIfBlock BlockType="ElseIf" Condition="[targetCities.Contains(compareRow(0)(&quot;City&quot;).ToString)]">
+                      <ui:IfElseIfBlock.Then>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[compareRow(0).ItemArray]" DataTable="[Extracted_DataTable]" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AddDataRow>
+                      </ui:IfElseIfBlock.Then>
+                    </ui:IfElseIfBlock>
+                  </sc:BindingList>
+                </ui:IfElseIf.ConditionBlocks>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:IfElseIf>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Vendors'" sap:VirtualizedContainerService.HintSize="451,51" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b008422-4266-4476-b604-4b5dadedd5ad" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search-by-id/FR322345" DesignTimeRectangle="472, 281, 51, 16" ElementType="Text" FriendlyName="'Vendors'" FullSelectorArgument="&lt;webctrl aaname='Vendors' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Vendors' tag='A' type='' check:text='Vendors' /&gt;" Guid="baaeb687-4df7-4889-944e-1a4d76e68053" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAAUCAYAAAAp46XeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF2SURBVFhH7VUxrsIwDOVOHIsb9AiVOEW3XgB1YOyAVLGygzhCZpM4drEdt3yEPlJRhyeRvNjxe3bKJoQAv4pV3FKxilsqSNwd2v0Bts2lOIC4DrCrjtBeHe4T/FdewrNz5x62VQ8nQTJOTRS+H+DmcB/ha+LCBerqALvurg7wfn2mNZoQxRLG/Yhbd4zdH/IUEG/zoVHMNb0RRxNEvJqkZEQ0uOV45HJt7vkI9eawONsh2VHbXeM8xsdLtBFPXk8AC2HePg2zxrukWZmfXtsPSjEmMiD/lp1KyN3KBZTmyK6bCUiQ93nPQvKztfGehhYXge4qtzihGQGJv4grimM+77lTI3g3Xj6RItYRJx2UXXGdN/i6OAZy2uiEUtw4flbM6zGYFeeZIwt+eywdmByOOCoyuWCdxGB5gRY8L87yOfa9D8r03QnqSUW44rgor0ujcII880pcgvwrqDu/4DG/KNTtHO6J86YZE+J+A6u4pWIVt0wEeAAA4boRj7lo5wAAAABJRU5ErkJggg==" InformativeScreenshot="fb91ce115a85aa99f94d567f668f09a9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Search Results' /&gt;" SearchSteps="FuzzySelector, Image" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1912, -8, 1936, 1096" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="117583e185da20d3ea267b36faa7c1d0.png" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search'/&gt;" Url="https://acme-test.uipath.com/vendors/search" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
