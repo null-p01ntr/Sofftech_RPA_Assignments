@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S71grjsRcvOflfZsJoA07ftzSx5t/6mKVyCXVI0CFhZPCt454zibXFdLYOsOpEzeMPI7n0cUnJwyicpcqASOGA==",
+  "dgSpecHash": "jfApGNalioaBnr4/HFKF168nPJyvhJZec5enXCrIDg7G34MEd6vNamPrnYvLciY+rM+EL56gvcVVUCNFWk1kVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dogac\\_dev\\UiPath\\Project\\Softtech2\\.local\\",
+  "projectFilePath": "C:\\Users\\dogac\\_dev\\Mulakat\\Sofftech_RPA_Assignments\\Softtech2\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\dogac\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\dogac\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
